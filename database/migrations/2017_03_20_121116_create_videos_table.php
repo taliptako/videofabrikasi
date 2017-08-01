@@ -22,7 +22,7 @@ class CreateVideosTable extends Migration
             $table->string('folder');
             $table->string('original_file_name');
             $table->string('extension');
-            $table->json('dash_variants');
+            $table->text('dash_variants');
             $table->string('progress');
 
             $table->string('hash');
