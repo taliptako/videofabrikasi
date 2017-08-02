@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use Cache;
 use Storage;
 
 class IframeController extends Controller
 {
     public function show($id, $hash)
     {
-        $video = Video::where('status', 1)->findorfail($id);
+        $video = Cache::remember('video-'.$id, 5, function () use ($id) {
+            return Video::where('status', 1)->findorfail($id);
+        });
+
         if ($video->hash != $hash) {
             abort(404);
         }
