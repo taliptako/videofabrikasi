@@ -32,6 +32,10 @@ class GetVideos implements ShouldQueue
     {
         $paths = Storage::disk('s3')->files($this->video->folder.'/'.$this->video->extension);
 
+        $fallback_path = $this->video->folder.'/mp4/fallback_480p.mp4';
+
+        Storage::disk('public')->put($fallback_path, Storage::disk('s3')->get($fallback_path));
+
         foreach ($paths as $path) {
             Storage::disk('public')->put($path, Storage::disk('s3')->get($path));
         }
