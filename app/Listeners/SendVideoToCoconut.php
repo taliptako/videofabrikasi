@@ -39,7 +39,7 @@ class SendVideoToCoconut
             $watermark_setting = '';
         }
 
-        $ffmpeg_settings = ',keep=video_bitrate,audio_bitrate';
+        $ffmpeg_settings = ',keep=video_bitrate,fps';
 
         $watermark_setting .= $ffmpeg_settings;
 
