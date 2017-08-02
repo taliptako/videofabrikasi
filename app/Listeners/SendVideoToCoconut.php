@@ -60,6 +60,8 @@ class SendVideoToCoconut
                 }
             }
         }
+        $outputs['mp4:480p'] = $s3.'/'.$event->video->folder.'/mp4/fallback_480p.mp4'.$s3_visibility.$watermark_setting;
+
 
         $outputs['jpg:300x'] = $s3.'/'.$event->video->folder.'/previews/thumbs_#num#.jpg?x-amz-acl=private, number=3';
         $outputs['jpg:640x'] = $s3.'/'.$event->video->folder.'/previews/thumbs_#num#.jpg?x-amz-acl=private, number=3';
