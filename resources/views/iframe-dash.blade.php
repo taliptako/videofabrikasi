@@ -10,8 +10,14 @@
 </head>
 <body>
 
-    <video id="video" width=600 height=300 class="video-js vjs-default-skin vjs-16-9" controls>
+    <video id="video" preload="metadata"
+           class="video-js vjs-default-skin vjs-16-9" controls>
+
         <source src="{{ $video->dash_url}}" type="application/dash+xml">
+
+        <p class="vjs-no-js">
+            Tarayıcınız html5 video özelliğini desteklemiyor!
+        </p>
     </video>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.1.0/video.min.js"></script>
