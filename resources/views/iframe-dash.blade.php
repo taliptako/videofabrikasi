@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <video id="video" width=600 height=300 class="video-js vjs-default-skin" controls>
-
+    <video id="video" width=600 height=300 class="video-js vjs-default-skin vjs-16-9" controls>
+        <source src="{{ $video->dash_url}}" type="application/dash+xml">
     </video>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.1.0/video.min.js"></script>
@@ -24,12 +24,6 @@
     <script>
         var player = videojs('video');
 
-        player.ready(function() {
-            player.src({
-                src: '{{ $video->dash_url}}',
-                type: 'application/dash+xml'
-            });
-        });
     </script>
 
 </body>
