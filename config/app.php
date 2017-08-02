@@ -168,7 +168,6 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
         Appstract\Opcache\OpcacheServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
