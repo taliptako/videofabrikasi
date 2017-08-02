@@ -15,6 +15,9 @@
 
         <source src="{{ $video->dash_url}}" type="application/dash+xml">
 
+        <source src="{{ $video->fallback_url}}" type="video/mp4">
+
+
         <p class="vjs-no-js">
             Tarayıcınız html5 video özelliğini desteklemiyor!
         </p>
