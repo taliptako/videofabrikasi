@@ -19,11 +19,7 @@ class CheckAdmin
         if (Auth::check()) {
             $user = Auth::user();
 
-            if($user->name != 'sAIAuQuuhGLOGgKmuO5fb9tzScTqUE8m'){
-                abort(403, 'Unauthorized action.');
-            }
-
-            if($user->name != '' and $user->name != 'sAIAuQuuhGLOGgKmuO5fb9tzScTqUE8m'){
+            if($user->email != 'talipdurmus1@gmail.com'){
                 abort(403, 'Unauthorized action.');
             }
 
