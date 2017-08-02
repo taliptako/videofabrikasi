@@ -72,6 +72,8 @@ class SendVideoToCoconut
 
         $job = Coconut::create($coconut);
 
+        dd($coconut);
+
         if ($job->status == 'ok') {
             $event->video->progress = 'Transcoding Yapılıyor ...';
         } else {
