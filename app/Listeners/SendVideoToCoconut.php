@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\VideoUploaded;
 use App\Http\Controllers\Coconut;
 use Storage;
+use Log;
 
 class SendVideoToCoconut
 {
@@ -72,12 +73,11 @@ class SendVideoToCoconut
 
         $job = Coconut::create($coconut);
 
-        dd($coconut);
-
         if ($job->status == 'ok') {
             $event->video->progress = 'Transcoding Yapılıyor ...';
         } else {
             $event->video->progress = 'Hata Kodu : '.$job->error_code;
+            Log::error($job->error_code);
         }
         $event->video->save();
     }
