@@ -71,7 +71,7 @@ class VideoSettingsController extends Controller
         return redirect()->route('video-settings.edit', ['setting_id' => $video_setting->id]);
     }
 
-    public function destroy($setting_id)
+    /*public function destroy($setting_id)
     {
         $video_setting = Auth::user()->video_settings->findOrFail($setting_id);
 
@@ -79,5 +79,5 @@ class VideoSettingsController extends Controller
         $video_setting->delete();
 
         return redirect()->route('video-settings.index');
-    }
+    }*/
 }

@@ -16,7 +16,6 @@
                                 <td>ID</td>
                                 <td>Ayar Adı</td>
                                 <th>Düzenle</th>
-                                <th>Sil</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -25,17 +24,6 @@
                                     <td>{{ $video_setting->id }}</td>
                                     <td>{{ $video_setting->name }}</td>
                                     <td><a class="btn btn-primary" href="{{ route('video-settings.edit', ['video_id' => $video_setting->id]) }}">Düzenle</a></td>
-                                    <td>
-                                        <form method="post" action="{{ route('video-settings.destroy', ['setting_id' => $video_setting->id]) }}">
-                                            {{ method_field('DELETE') }}
-                                            <div class="form-group">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
