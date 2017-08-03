@@ -10,9 +10,13 @@ class IframeController extends Controller
 {
     public function show($id, $hash)
     {
-        $video = Cache::remember('video-'.$id, 5, function () use ($id) {
+        $video = Cache::remember('video-'.$id, 2, function () use ($id) {
             return Video::where('status', 1)->with('setting')->findorfail($id);
         });
+
+        if ($video->hash != $hash) {
+            abort(404);
+        }
 
         if ($video->setting->player_skin == 'twitchy') {
             $skin_url = '<link href="//cdn.rawgit.com/mmcc/videojs-skin-twitchy/v2.0.1/dist/videojs-skin-twitchy.css" rel="stylesheet" type="text/css">';
@@ -23,10 +27,6 @@ class IframeController extends Controller
         } else {
             $skin_url = '';
             $skin_class = 'vjs-default-skin';
-        }
-
-        if ($video->hash != $hash) {
-            abort(404);
         }
 
         $video->dash_url = Storage::url($video->folder.'/'.$video->extension.'/dash.mpd');
