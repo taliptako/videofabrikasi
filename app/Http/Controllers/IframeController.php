@@ -11,8 +11,9 @@ class IframeController extends Controller
     public function show($id, $hash)
     {
         $video = Cache::remember('video-'.$id, 5, function () use ($id) {
-            return Video::where('status', 1)->findorfail($id);
+            return Video::where('status', 1)->with('setting')->findorfail($id);
         });
+        dd($video);
 
         if ($video->hash != $hash) {
             abort(404);
