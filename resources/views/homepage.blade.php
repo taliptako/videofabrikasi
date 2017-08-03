@@ -85,7 +85,7 @@
 
                 <div class="links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Dashbord</a>
+                        <a href="{{ route('dashboard') }}">Dashbord</a>
                     @else
                         <a href="{{ url('/login') }}">Giriş Yap</a>
                         <a href="{{ url('/register') }}">Kayıt Ol</a>
