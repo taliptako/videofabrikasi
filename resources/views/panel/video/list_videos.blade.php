@@ -5,6 +5,8 @@
         <div class="row">
 
             <div class="col-md-12">
+                <a href="{{ route('upload_video') }}" style="margin-bottom: 10px;" class="btn btn-default">Yeni Video Yükle</a>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">Videolar</div>
                     <div class="panel-body">
