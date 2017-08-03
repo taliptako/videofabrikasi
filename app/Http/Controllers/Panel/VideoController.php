@@ -33,6 +33,7 @@ class VideoController extends Controller
     {
         $rules = [
             'name'      => 'required',
+            'setting_id' => 'required',
             'extension' => 'required', [
                 Rule::in(['mp4', 'webm']),
             ],
@@ -40,14 +41,6 @@ class VideoController extends Controller
             'video'  => 'required|file|max:100000|mimes:mp4,webm,mpeg,mkv,3gp,mov,avi,ogx,oga,ogv,ogg',
         ];
 
-        $video_settings = Auth::user()->video_settings()->select('id')->get();
-        foreach ($video_settings as $video_setting) {
-            $setting_array[] = $video_setting->id;
-        }
-
-        $rules['setting_id'] = ['required',
-            Rule::in($setting_array),
-        ];
 
         if ($request->has('dash_variants')) {
             foreach ($request->input('dash_variants') as $key => $val) {

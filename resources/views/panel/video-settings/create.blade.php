@@ -11,6 +11,10 @@
 
                         <form class="form-horizontal" method="post" action="{{ route('video-settings.store') }}" enctype="multipart/form-data">
 
+                            <div class="col-md-12" style="margin-bottom: 20px;">
+                                Kullanmak istemediğiniz alanları boş bırakabilirsiniz
+                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Ön Ayar Adı</label>
                                 <div class="col-sm-4">
