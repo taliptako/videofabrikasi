@@ -12,7 +12,7 @@
                         <form method="post" action="{{ route('store_video') }}" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="name">Video Adı :</label>
-                                <input type="text" name="name" class="form-control" id="name">
+                                <input type="textarea" name="name" class="form-control" id="name">
                             </div>
                             <div class="form-group">
                                 <label for="video">Video :</label>
@@ -21,7 +21,7 @@
 
                             <div class="form-group">
                                 <label for="codec">Kodek :</label>
-                                <label class="radio-inline"><input value="webm" type="radio" name="extension">VP9/WebM</label>
+                                <label class="radio-inline"><input value="webm" type="radio" name="extension" checked>VP9/WebM</label>
                                 <label class="radio-inline"><input value="mp4" type="radio" name="extension">H.264/MP4</label>
                             </div>
 
@@ -37,7 +37,7 @@
 
                             <div class="form-group">
                                 <label for="codec">Statü :</label>
-                                <label class="radio-inline"><input value="1" type="radio" name="status">Aktif</label>
+                                <label class="radio-inline"><input value="1" type="radio" name="status" checked>Aktif</label>
                                 <label class="radio-inline"><input value="0" type="radio" name="status">Pasif</label>
                             </div>
 
@@ -48,11 +48,14 @@
                                         <input value="{{ $video_setting->id }}" type="radio" name="setting_id">{{ $video_setting->name }}
                                     </label>
                                 @endforeach
+                                @if($video_settings->isEmpty())
+                                    Ön Ayar oluşturmadan devam edemezsiniz
+                                @endif
                             </div>
 
 
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-default">Yükle</button>
+                            <button class="btn btn-default">Yükle</button>
                         </form>
                         </br>
                         @include('layouts.alert')
