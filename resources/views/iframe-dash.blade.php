@@ -10,7 +10,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-ima/0.6.0/videojs.ima.min.css" rel="stylesheet">
 
-    {{ $skin }}
+    {{ $skin_url }}
 
     <!-- If you'd like to support IE8 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.1.0/ie8/videojs-ie8.min.js"></script>
@@ -18,7 +18,7 @@
 <body>
 
     <video id="video" preload="metadata"
-           class="video-js vjs-default-skin vjs-16-9" controls>
+           class="video-js {{ $skin_class }} vjs-16-9" controls>
 
         <source src="{{ $video->dash_url}}" type="application/dash+xml">
 

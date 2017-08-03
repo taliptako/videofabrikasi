@@ -13,7 +13,17 @@ class IframeController extends Controller
         $video = Cache::remember('video-'.$id, 5, function () use ($id) {
             return Video::where('status', 1)->with('setting')->findorfail($id);
         });
-        dd($video);
+
+        if ($video->setting->player_skin == 'twitchy') {
+            $skin_url = '<link href="//cdn.rawgit.com/mmcc/videojs-skin-twitchy/v2.0.1/dist/videojs-skin-twitchy.css" rel="stylesheet" type="text/css">';
+            $skin_class = 'vjs-skin-twitchy';
+        } elseif ($video->setting->player_skin == 'sublime_skin') {
+            $skin_url = '<link href="//cdn.rawgit.com/zanechua/videojs-sublime-inspired-skin/25a23c1f/dist/videojs-sublime-skin.min.css" rel="stylesheet" type="text/css">';
+            $skin_class = 'vjs-sublime-skin';
+        } else {
+            $skin_url = '';
+            $skin_class = 'vjs-default-skin';
+        }
 
         if ($video->hash != $hash) {
             abort(404);
@@ -22,6 +32,7 @@ class IframeController extends Controller
         $video->dash_url = Storage::url($video->folder.'/'.$video->extension.'/dash.mpd');
         $video->fallback_url = Storage::url($video->folder.'/mp4/fallback_480p.mp4');
 
-        return view('iframe-dash', ['video' => $video]);
+        return view('iframe-dash', ['video' => $video,
+            'skin_url'                      => $skin_url, 'skin_class' => $skin_class, ]);
     }
 }
