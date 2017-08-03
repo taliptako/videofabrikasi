@@ -54,6 +54,23 @@
 
                             </div>
 
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Player stili</label>
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                        <input value="default" type="radio" name="player_skin" checked>Default
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input value="twitchy" type="radio" name="player_skin">Twitchy
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input value="sublime_skin" type="radio" name="player_skin">Sublime
+                                    </label>
+                                </div>
+
+                            </div>
+
                             {{ csrf_field() }}
 
                             <div class="form-group">

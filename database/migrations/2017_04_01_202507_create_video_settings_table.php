@@ -22,6 +22,8 @@ class CreateVideoSettingsTable extends Migration
             $table->string('watermark')->nullable();
             $table->string('watermark_position')->nullable();
 
+            $table->enum('player_skin', ['default', 'twitchy', 'sublime_skin'])->index();
+
             $table->timestamps();
         });
     }

@@ -61,6 +61,25 @@
 
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Player stili</label>
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                        <input value="default" type="radio" name="player_skin"
+                                               @if(isset($video_setting) and $video_setting->player_skin == "default")checked @endif>Default
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input value="twitchy" type="radio" name="player_skin"
+                                               @if(isset($video_setting) and $video_setting->player_skin == "twitchy")checked @endif>Twitchy
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input value="sublime_skin" type="radio" name="player_skin"
+                                               @if(isset($video_setting) and $video_setting->player_skin == "sublime_skin")checked @endif>Sublime
+                                    </label>
+                                </div>
+
+                            </div>
+
 
                             {{ method_field('PUT') }}
 

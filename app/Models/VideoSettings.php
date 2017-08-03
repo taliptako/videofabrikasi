@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class VideoSettings extends Model
 {
     protected $fillable = [
-        'name', 'watermark', 'watermark_position',
+        'name', 'watermark', 'watermark_position', 'player_skin'
     ];
 
     public function user()

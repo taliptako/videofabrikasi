@@ -12,7 +12,7 @@
                         <form method="post" action="{{ route('store_video') }}" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="name">Video Adı :</label>
-                                <input type="textarea" name="name" class="form-control" id="name">
+                                <input type="text" name="name" class="form-control" id="name">
                             </div>
                             <div class="form-group">
                                 <label for="video">Video :</label>
