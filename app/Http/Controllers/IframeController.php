@@ -40,7 +40,8 @@ class IframeController extends Controller
         $response = view('vmap');
         return response($response)
             ->withHeaders([
-                'Content-Type' => 'text/xml'
+                'Content-Type' => 'text/xml',
+                'Access-Control-Allow-Origin' => '*'
             ]);
     }
 }
