@@ -11,7 +11,7 @@ return [
      |
      */
     'supportsCredentials' => false,
-    'allowedOrigins' => ['*'],
+    'allowedOrigins' => ['imasdk.googleapis.com'],
     'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
