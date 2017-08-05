@@ -20,7 +20,6 @@
     <video id="video" preload="metadata"
            class="video-js {{ $skin_class }} vjs-16-9" controls>
 
-        <source src="{{ $video->dash_url}}" type="application/dash+xml">
 
         <source src="{{ $video->fallback_url}}" type="video/mp4">
 
