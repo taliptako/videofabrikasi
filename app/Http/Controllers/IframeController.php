@@ -41,7 +41,7 @@ class IframeController extends Controller
         return response($response)
             ->withHeaders([
                 'Content-Type' => 'text/xml',
-                'Access-Control-Allow-Credentials' => '*'
+                'Access-Control-Allow-Credentials' => 'true'
             ]);
     }
 }
