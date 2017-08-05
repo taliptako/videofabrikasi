@@ -37,6 +37,10 @@ class IframeController extends Controller
 
     public function vmap()
     {
-        return view('vmap');
+        $response = view('vmap');
+        return response($response)
+            ->withHeaders([
+                'Content-Type' => 'text/xml'
+            ]);
     }
 }

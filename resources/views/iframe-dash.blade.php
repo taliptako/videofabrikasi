@@ -48,7 +48,7 @@
 
         var options = {
             id: 'video',
-            adTagUrl: 'https://videofabrikasi.com/vmap.xml'
+            adTagUrl: 'https://videofabrikasi.com/vmap'
         };
 
         // This must be called before player.play() below.
