@@ -2,7 +2,7 @@
 
 Route::get('/', 'HomePageController@index')->name('homepage');
 
-Route::get('/video/{id}/{hash}', 'IframeController@show')->middleware(['cors'])->name('show_video');
+Route::get('/video/{id}/{hash}', 'IframeController@show')->name('show_video');
 
 Route::get('/vmap', 'IframeController@vmap')->middleware(['cors'])->name('vmap');
 
