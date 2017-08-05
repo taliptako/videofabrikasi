@@ -48,7 +48,34 @@
 
         var options = {
             id: 'video',
-            adTagUrl: 'https://videofabrikasi.com/vmap'
+            adResponse: '<?xml version = "1.0" encoding = "UTF-8"?>\n' +
+            '<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">\n' +
+            '    <vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll">\n' +
+            '        <vmap:AdSource id="preroll-ad-1" allowMultipleAds="false" followRedirects="true">\n' +
+            '            <vmap:AdTagURI templateType="vast3"><![CDATA[https://pubads.g.doubleclick.net/gampad/ads?sz=400x300|640x480&iu=/40888219/videojs_test2&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]]]></vmap:AdTagURI>\n' +
+            '        </vmap:AdSource>\n' +
+            '    </vmap:AdBreak>\n' +
+            '    <vmap:AdBreak timeOffset="00:00:15.000" breakType="linear" breakId="midroll-1">\n' +
+            '        <vmap:AdSource id="midroll-1-ad-1" allowMultipleAds="false" followRedirects="true">\n' +
+            '            <vmap:AdTagURI templateType="vast3"><![CDATA[https://pubads.g.doubleclick.net/gampad/ads?sz=400x300|640x480&iu=/40888219/videojs_test2&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]]]></vmap:AdTagURI>\n' +
+            '        </vmap:AdSource>\n' +
+            '    </vmap:AdBreak>\n' +
+            '    <vmap:AdBreak timeOffset="00:00:15.000" breakType="linear" breakId="midroll-1">\n' +
+            '        <vmap:AdSource id="midroll-1-ad-2" allowMultipleAds="false" followRedirects="true">\n' +
+            '            <vmap:AdTagURI templateType="vast3"><![CDATA[https://pubads.g.doubleclick.net/gampad/ads?sz=400x300|640x480&iu=/40888219/videojs_test2&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]]]></vmap:AdTagURI>\n' +
+            '        </vmap:AdSource>\n' +
+            '    </vmap:AdBreak>\n' +
+            '    <vmap:AdBreak timeOffset="00:00:15.000" breakType="linear" breakId="midroll-1">\n' +
+            '        <vmap:AdSource id="midroll-1-ad-3" allowMultipleAds="false" followRedirects="true">\n' +
+            '            <vmap:AdTagURI templateType="vast3"><![CDATA[https://pubads.g.doubleclick.net/gampad/ads?sz=400x300|640x480&iu=/40888219/videojs_test2&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]]]></vmap:AdTagURI>\n' +
+            '        </vmap:AdSource>\n' +
+            '    </vmap:AdBreak>\n' +
+            '    <vmap:AdBreak timeOffset="end" breakType="linear" breakId="postroll">\n' +
+            '        <vmap:AdSource id="postroll-ad-1" allowMultipleAds="false" followRedirects="true">\n' +
+            '            <vmap:AdTagURI templateType="vast3"><![CDATA[https://pubads.g.doubleclick.net/gampad/ads?sz=400x300|640x480&iu=/40888219/videojs_test2&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&url=[referrer_url]&description_url=[description_url]&correlator=[timestamp]]]></vmap:AdTagURI>\n' +
+            '        </vmap:AdSource>\n' +
+            '    </vmap:AdBreak>\n' +
+            '</vmap:VMAP>\n'
         };
 
         // This must be called before player.play() below.
