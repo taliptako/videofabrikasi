@@ -170,6 +170,8 @@ return [
         Laravel\Passport\PassportServiceProvider::class,
         Appstract\Opcache\OpcacheServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...

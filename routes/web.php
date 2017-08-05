@@ -4,6 +4,8 @@ Route::get('/', 'HomePageController@index')->name('homepage');
 
 Route::get('/video/{id}/{hash}', 'IframeController@show')->name('show_video');
 
+Route::get('/vmap', 'IframeController@vmap')->middleware(['cors'])->name('vmap');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Panel', 'prefix' => 'user'], function () {
